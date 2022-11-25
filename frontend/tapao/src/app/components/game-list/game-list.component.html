@@ -1,0 +1,33 @@
+
+<ul *ngIf="gameList != undefined ; else no_game_list ">
+    
+    <li class = "gameList" *ngFor="let game of gameList">
+        
+        Game {{game.Nb_players}}/5 players 
+        <br>
+        
+        <div class="players" *ngIf="game.Nb_players > 0">
+        
+            <ul> 
+                <span><img src = "../../../assets/people-icon.png"> </span>
+                
+                <li  *ngFor="let player of game.Players"> {{player}} </li>
+            </ul>
+            
+            <button (click)="joinGame(game.Id)">  Join </button>  
+            
+        </div> 
+        
+        
+    </li>
+    
+    
+</ul>
+
+<ng-template #no_game_list>
+    
+    <h2>Loading joinable games... </h2>
+    
+</ng-template>
+
+    

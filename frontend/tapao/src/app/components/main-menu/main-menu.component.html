@@ -1,0 +1,35 @@
+
+<div class="content">
+
+
+<h1 *ngIf="websocketService.connected; else notConnected" style="color : green;"> Connected </h1>
+
+<ng-template #notConnected  style="color : red;"> Waiting for server reponse... </ng-template>
+    
+<div class="vertical-line"></div>
+
+
+
+<section class = "multiplayer">
+
+    <input type="text" [(ngModel)]="this.playerName" (input)="error_message = false"  placeholder="Enter your name" > 
+
+    <h1> Your name : {{this.playerName}} </h1>
+
+    <p *ngIf="error_message" id="error_message"> Please enter a valid name! </p>
+    
+    <app-game-list (buttonClicket)="joinGame($event)" ></app-game-list>
+
+    <button (click)="createGame()"> Create Game! </button>
+    
+    
+</section>
+
+<section class="singleplayer">
+   
+    <button (click)="router.navigate(['game']);" id="sp-button"> Single Player </button>
+
+</section>
+
+
+</div>

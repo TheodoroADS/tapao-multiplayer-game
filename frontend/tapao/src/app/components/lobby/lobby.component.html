@@ -1,0 +1,15 @@
+
+
+<h1>Lobby</h1>
+
+<ul>
+
+    <h2>Players</h2>
+
+    <li *ngFor="let player of players"> player {{player.Name}} is {{playerStatusToString(player.Status)}} </li>
+
+</ul>
+
+<button (click)=startGame() > Start Game </button>
+
+

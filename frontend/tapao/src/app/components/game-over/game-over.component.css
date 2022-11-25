@@ -1,0 +1,26 @@
+
+h1{
+
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    color: rgb(206, 75, 75);
+}
+
+
+
+.try-again {
+
+    width : 7em;
+    height : 3em;
+    border-radius: 0%;
+    border-width: 0.1em;
+    background-color: khaki;
+    
+}
+
+.try-again:hover{
+
+
+    background-color: aqua;
+    transition: 0.7s;
+
+}

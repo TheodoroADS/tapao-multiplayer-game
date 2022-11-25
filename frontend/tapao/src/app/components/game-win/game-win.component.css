@@ -1,0 +1,28 @@
+
+h1{
+
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    color: green;
+}
+
+
+
+.play-again {
+
+    width : 7em;
+    height : 3em;
+    border-radius: 0%;
+    border-width: 0.1em;
+    background-color: rgb(7, 136, 7);
+    color : rgb(169, 232, 169);    
+}
+
+
+.play-again:hover{
+
+
+    background-color: lightgreen;
+    color :  rgb(3, 97, 3);
+    transition: 0.7s;
+
+}

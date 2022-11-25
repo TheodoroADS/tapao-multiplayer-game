@@ -1,0 +1,59 @@
+
+
+    <div id="gameInfo">
+        
+        <h2>Game Info</h2>
+
+        <section id="number_cards"> Your cards : {{game.players[0].number_cards}}</section>
+        <section  id= "cards_on_table"> Cards on the table : {{game.cards_on_table}}</section>
+    
+    </div>
+    
+    <div id="players">
+        
+        <h2 *ngIf="!game.turn; else yourTurn">Now it's {{game.players[game.current_player].name}}'s turn</h2    >
+        
+            <ng-template #yourTurn><h2 style="color:forestgreen;">It's your turn </h2></ng-template>
+
+        <h2> Players : </h2>
+        
+        <span *ngFor="let player of game.players"> {{player.name}} : {{player.number_cards}} cards </span>
+
+
+    </div>
+
+
+<div class="content" role="main">
+    
+        
+    <h1 class="lost_message" *ngIf="game.lost_round">You lost!!!</h1>
+    
+    
+    <section class = "current_number">
+        
+        <img src="../../assets/Speech_bubble.svg.png" alt="pinto">
+        <h1>  {{translate(game.current_number)}} </h1>
+        
+        
+    </section>
+    
+    
+    <div class = "current_card">
+        
+        <img src="../../assets/cardsvg_empty.png"/>
+        <h1 id ="number_up" > {{translate(game.current_card)}} </h1>
+        <h1 id ="number_down" > {{translate(game.current_card)}} </h1>
+        
+    </div>
+    
+    
+    <div class="put_card_container">
+        
+        <button id="put_card" class = "center" (click)="game.update()" *ngIf="game.turn; else tapaoButton"> Put card!</button>
+       <ng-template #tapaoButton> <button id="tapao" class = "center" (click)="game.tapao()" > <span id = "tapao_text">Tapão! </span> </button></ng-template>
+        
+    </div>
+    
+
+    
+</div>

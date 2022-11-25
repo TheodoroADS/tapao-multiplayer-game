@@ -1,0 +1,47 @@
+
+
+button {
+
+    border-radius: 20%;
+    background-color : rgb(23, 215, 215);
+    margin-left: 50%;
+    overflow: hidden;
+}
+
+button:hover {
+    
+    background-color : rgb(103, 255, 209);
+    transition-delay: 100ms;
+    width : 10%;
+    height : 20%;
+
+}
+
+
+
+
+ul {
+    padding-left: 0px;
+}
+
+
+.gameList li { 
+    
+    list-style: none;
+
+}
+
+.players li {
+    
+    display: inline;
+
+}
+
+.players img {
+
+    padding-right: 2%;
+    width : 5%;
+    height : 5%;
+
+}
+
