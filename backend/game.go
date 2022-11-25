@@ -110,13 +110,13 @@ func (gamepool GamePool) get(i uint32) *Game {
 
 func (gamepool *GamePool) lobbyGames() []GameDTO {
 
-	lobby_games := make([]GameDTO, gamepool.Nb_games)
+	lobby_games := make([]GameDTO, 0, gamePool.Nb_games)
 
-	for idx, g := range gamepool.Games[:gamePool.Nb_games] {
+	for _, g := range gamepool.Games[:gamePool.Nb_games] {
 
 		if g.status == Lobby {
 
-			lobby_games[idx] = g.DTO()
+			lobby_games = append(lobby_games, g.DTO())
 
 		}
 
